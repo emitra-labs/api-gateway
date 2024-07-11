@@ -6,6 +6,7 @@ require (
 	github.com/appleboy/graceful v1.1.1
 	github.com/caitlinelfring/go-env-default v1.1.0
 	github.com/gofiber/fiber/v2 v2.52.5
+	github.com/iancoleman/strcase v0.3.0
 )
 
 require (

@@ -23,7 +23,7 @@ var port = env.GetIntDefault("PORT", 3000)
 var services = []Service{}
 
 func init() {
-	// Collect services from env variables
+	// Collect backend services from env variables
 	for _, e := range os.Environ() {
 		segments := strings.Split(e, "=")
 		key := segments[0]
@@ -50,6 +50,8 @@ func main() {
 			Servers: []string{service.Address},
 			ModifyRequest: func(c *fiber.Ctx) error {
 				requestURI := string(c.Request().RequestURI())
+				// Rewrite request uri by eliminating service path prefix,
+				// then send it to the backend service.
 				requestURI = strings.Replace(requestURI, service.Path, "", 1)
 				c.Request().SetRequestURI(requestURI)
 				return nil

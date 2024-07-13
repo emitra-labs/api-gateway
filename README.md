@@ -17,6 +17,20 @@ These services will be exposed based on their service paths. The service path is
 
 ## Quickstart
 
+You have two options to get started: using the Docker image or running the program locally.
+
+### 1. Using the Docker Image
+
+```bash
+docker run \
+  --name api-gateway \
+  -p 3000:3000 \
+  -e FOO_HTTP_ADDRESS=http://foo-service:8080 \
+  ghcr.io/ukasyah-dev/api-gateway:main
+```
+
+### 2. Running the Program Locally
+
 ```bash
 # Create .env file, update its content
 cp .env.example .env

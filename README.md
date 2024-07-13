@@ -38,3 +38,5 @@ cp .env.example .env
 # Run the app
 make run
 ```
+
+That's it! You should now have the API Gateway up and running.

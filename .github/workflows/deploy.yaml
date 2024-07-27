@@ -8,16 +8,18 @@ on:
 
 jobs:
   build:
-    uses: ukasyah-dev/actions/.github/workflows/build-docker-go.yaml@main
+    uses: ukasyah-dev/actions/.github/workflows/build-go.yaml@main
     permissions:
       contents: read
       packages: write
     secrets: inherit
   
   deploy:
-    uses: ukasyah-dev/actions/.github/workflows/deploy-docker.yaml@main
+    uses: ukasyah-dev/actions/.github/workflows/deploy-kubernetes.yaml@main
     needs: build
     if: github.event_name == 'push'
     permissions:
       contents: read
+    with:
+      host: api.emitra.co
     secrets: inherit

@@ -23,4 +23,5 @@ jobs:
     with:
       env-vars: true
       host: api.emitra.co
+      http: true
     secrets: inherit

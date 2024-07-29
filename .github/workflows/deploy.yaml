@@ -21,6 +21,5 @@ jobs:
     permissions:
       contents: read
     with:
-      env-vars: true
       host: api.emitra.co
     secrets: inherit

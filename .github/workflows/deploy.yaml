@@ -20,6 +20,4 @@ jobs:
     if: github.event_name == 'push'
     permissions:
       contents: read
-    with:
-      host: api.emitra.co
     secrets: inherit

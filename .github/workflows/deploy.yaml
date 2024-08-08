@@ -2,9 +2,9 @@ name: Deploy
 
 on:
   push:
-    branches: ['main']
+    branches: ["main"]
   release:
-    types: ['published']
+    types: ["published"]
 
 jobs:
   build:
@@ -13,11 +13,11 @@ jobs:
       contents: read
       packages: write
     secrets: inherit
-  
+
   deploy:
     uses: emitra-labs/actions/.github/workflows/deploy-kubernetes.yaml@main
+    environment: development
     needs: build
-    if: github.event_name == 'push'
     permissions:
       contents: read
     secrets: inherit

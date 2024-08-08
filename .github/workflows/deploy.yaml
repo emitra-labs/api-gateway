@@ -16,8 +16,9 @@ jobs:
 
   deploy:
     uses: emitra-labs/actions/.github/workflows/deploy-kubernetes.yaml@main
-    environment: development
     needs: build
     permissions:
       contents: read
+    with:
+      environment: development
     secrets: inherit
